@@ -1,0 +1,15 @@
+doctype html
+html
+    head
+        title= title
+        link(href='/stylesheets/style_music.css' type='text/css' rel='stylesheet')
+
+    body
+        h1= title
+        h3 alot fo artists 
+        each artist in data
+            a(href="/specific/"+artist.id)= artist.name
+            br
+            img(src=artist.picture_xl) 
+            br
+            

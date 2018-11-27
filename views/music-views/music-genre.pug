@@ -1,0 +1,15 @@
+doctype html
+html
+    head
+        title= title
+        link(href='/stylesheets/style_music.css' type='text/css' rel='stylesheet')
+        
+    body
+        h1= title
+        h3 Peack the music genre thet you like
+        each genre in data
+          a(href="/artists/"+genre.id)= genre.name
+          br
+          img(src=genre.picture_xl) 
+          br
+          

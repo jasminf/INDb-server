@@ -1,0 +1,17 @@
+doctype html
+html
+    head
+        title= title
+        link(href='/stylesheets/style.css' type='text/css' rel='stylesheet')
+
+    body
+        h1= title
+
+
+        each comic in comicsList
+            a(href="/comics/view/"+comic.id)= comic.title
+            
+            h3= comic.date
+            img(src=comic.coverThumb)
+
+            br

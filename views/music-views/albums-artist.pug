@@ -1,0 +1,23 @@
+doctype html
+html
+    head
+        title= title
+        link(href='/stylesheets/style_music.css' type='text/css' rel='stylesheet')
+
+    body
+        h1= title
+
+          each albumTrack in numTracks
+
+            h4= albumTrack.track_position
+            h3= albumTrack.title
+
+            br
+              
+            //- h3 listen to the treck  #{albumTreck.link} 
+            //- a(href="https://www.deezer.com/track/"+albumTreck.id)= listen to the treck 
+          
+            //h3 This Album has #{numTracks.total} Tracks
+
+        
+        

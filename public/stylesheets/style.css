@@ -1,0 +1,81 @@
+/*#view_all*/
+
+body {
+  background-color: #b2b2b2;
+  font-family: monospace;
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  color: #293d3d;
+  font-size: 100px;
+  margin: auto;
+  text-align: center;
+}
+
+div #myPt .comics {
+  border: 5px solid #b31777;
+  margin: auto;
+
+}
+
+a {
+  font-size: 75px;
+  color: #ff6464;
+  margin: auto;
+  text-align: center;
+}
+
+
+img {
+  width: 250px;
+  height: 350px;
+
+}
+
+
+p{
+  color: #800080;
+  font-size: 40px;
+
+}
+
+h4 {
+  color: #666699;
+  font-size: 30px;
+  margin: 50px 100px 100px 100px;
+}
+
+/*
+#view_one
+
+body {
+  background-color: #d98cb3;
+  font-family: monospace;
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  color: #4d004d;
+  font-size: 100px;
+  margin: auto;
+  text-align: center;
+}
+
+h4{
+  color: #800080;
+  font-size: 30px;
+}
+
+img {
+  width: 350px;
+  height: 500px;
+}
+
+p{
+  color: #800080;
+  font-size: 50px;
+}
+*/
