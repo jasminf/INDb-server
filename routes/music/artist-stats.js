@@ -7,7 +7,7 @@ const ArtistReport = require('../../lib/artist-report');
 router.get('/:artistId/report', function (req, res) {
     const artistId = req.params.artistId;
 
-    const artistReport = new ArtistReport(artistId);
+    const artistReport = new ArtistReport();
     artistReport.getStats(artistId)
         .then( (stats)=> {
             return res.json(stats);
