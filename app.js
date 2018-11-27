@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// require('./lib/test-db');
+
 var main = require('./routes/main');
 var comics = require('./routes/comics');
 
