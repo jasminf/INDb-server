@@ -25,8 +25,6 @@ router.get('/', function (req, res) {
           console.error("api Error", error);
           res.send(error.message);
       });
-
-
 });
 
 module.exports = router;

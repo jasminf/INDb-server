@@ -1,3 +1,4 @@
+doctype html
 html
     head
         title= title
@@ -11,10 +12,10 @@ html
         each specificArtist in dataAlb
           a(href="/albums/"+specificArtist.id)= specificArtist.title
           br
-          img(src=specificArtist.cover_xl) 
+          img(src=specificArtist.cover_xl)
           br
 
-        
+
         
         
       
