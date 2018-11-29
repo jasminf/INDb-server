@@ -15,7 +15,8 @@ var artists = require('./routes/music/artists');
 var specific = require('./routes/music/specific-artist');
 var albums = require('./routes/music/album-of-artist');
 var stats = require('./routes/music/artist-stats');
-var search = require('./routes/music/artist-search');
+var artistSearch = require('./routes/music/artist-search');
+var deezerSearch = require('./routes/music/deezer-search');
 
 var app = express();
 
@@ -39,7 +40,8 @@ app.use('/specific', specific);
 app.use('/albums', albums);
 app.use('/genre', genre);
 app.use('/stats', stats);
-app.use('/search', search);
+app.use('/search', artistSearch);
+app.use('/search', deezerSearch);
 
 
 // catch 404 and forward to error handler

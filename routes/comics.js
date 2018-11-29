@@ -4,7 +4,7 @@ var comicsListArr = require('./MOCK_DATA');
 
 
 /* GET comics/view_all */
-router.get('/view_all', function (req, res, next) {
+router.get('/view_all', function (req, res) {
     const viewData = {
         title: 'Marvel Comics!!!!',
         comicsList: comicsListArr,
