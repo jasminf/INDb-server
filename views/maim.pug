@@ -2,6 +2,7 @@ doctype html
 html
     head
         title= title
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous')
         link(href='/stylesheets/style.css' type='text/css' rel='stylesheet')
 
 
@@ -9,15 +10,15 @@ html
         h1= title
         img(src="/images/maim/cheshireCat.jpg")
         br
-        a(href="/comics/view_all/")=linkOne
-        br
-        a(href="/genre/")=linkTwo
-        br
-        
-        //- a(href="/specific/2814/")=linkThree
-        //- br
-          
-      
+        .button
+            button.btn.btn-outline-dark(type='button')
+                a(href="/comics/view_all/")=linkOne
+            br
+            button.btn.btn-outline-light(type='button')
+                a(href="/genre/")=linkTwo
+            br
+
+
           
           
 

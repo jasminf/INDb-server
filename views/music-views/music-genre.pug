@@ -2,14 +2,26 @@ doctype html
 html
     head
         title= title
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous')
         link(href='/stylesheets/style_music.css' type='text/css' rel='stylesheet')
         
     body
-        h1= title
-        h3 Peack the music genre thet you like
-        each genre in data
-          a(href="/artists/"+genre.id)= genre.name
-          br
-          img(src=genre.picture_xl) 
-          br
-          
+        .container
+            h1= title
+            h3 Peack the music genre thet you like
+
+            .d-flex.align-content-stretch.flex-wrap
+                each genre in data
+                    a(href="/artists/" + genre.id)= genre.name
+                    br
+                    img(src=genre.picture_xl)
+                    br
+
+//button.btn.btn-outline-dark(type='button')
+
+// img(src=genre.picture_xl)
+//.media
+//    img.mr-3(src=genre.picture_xl)
+//    .media-body
+//    a.mt-0(href="/artists/"+genre.id)=genre.name
+//    br

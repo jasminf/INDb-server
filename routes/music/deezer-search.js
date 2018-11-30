@@ -9,4 +9,8 @@ router.get('/', (req, res)=> {
     res.render('music-views/deezer-search', viewData);
 });
 
+router.post('/artists',(artistName)=>{
+
+});
+
 module.exports = router;

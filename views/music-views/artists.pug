@@ -2,14 +2,15 @@ doctype html
 html
     head
         title= title
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous')
         link(href='/stylesheets/style_music.css' type='text/css' rel='stylesheet')
 
     body
         h1= title
-        h3 alot fo artists 
+        h3 alot fo artists
         each artist in data
             a(href="/specific/"+artist.id)= artist.name
             br
-            img(src=artist.picture_xl) 
+            img.img-thumbnail(src=artist.picture_xl)
             br
-            
+

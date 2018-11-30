@@ -43,7 +43,10 @@ a {
 img {
   width: 200px;
   height: 200px;
-  margin: auto;
+  margin:auto;
+  padding-top:15px;
+  padding-bottom: 15px;
+
 
 }
 
