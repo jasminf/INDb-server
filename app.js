@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 // require('./lib/test-db');
 
 var main = require('./routes/main');
+var userFav = require('./routes/user-favorites');
 var comics = require('./routes/comics');
 
 var genre = require('./routes/music/music-genre');
@@ -34,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/main', main);
+app.use('/favorites', userFav);
 app.use('/comics', comics);
 app.use('/artists', artists);
 app.use('/specific', specific);

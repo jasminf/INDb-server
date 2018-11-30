@@ -5,16 +5,4 @@ html
         link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous')
         link(href='/stylesheets/style_music.css' type='text/css' rel='stylesheet')
     body
-        h3 Your search result:
-        h1= title
-        each artist in data
-            h3=artist.name
-            h3=artist.id
-            img(src=artist.picture_xl)
-            br
-
-//            a(href="/userFar/"+ user.id)= add button // add to fav
-
-// .img-thumbnail
-
-//.d-flex-content-stretch.flex-wrap
+        h3 My favorites:
