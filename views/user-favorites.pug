@@ -5,4 +5,10 @@ html
         link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous')
         link(href='/stylesheets/style_music.css' type='text/css' rel='stylesheet')
     body
-        h3 My favorites:
+        h1 My favorites:
+         each newArtist in artistFav
+            h3=newArtist.name
+            img.img-thumbnail(src=newArtist.pictureUrl)
+        each neewArtist in createdArtistReports
+            h3=neewArtist.totalAvgDuration
+            h2=neewArtist.totalAvgRank

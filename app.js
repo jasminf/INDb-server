@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/main', main);
-app.use('/favorites', userFav);
+app.use('/user', userFav);
 app.use('/comics', comics);
 app.use('/artists', artists);
 app.use('/specific', specific);

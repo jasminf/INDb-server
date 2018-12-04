@@ -1,5 +1,5 @@
 module.exports = {
-  "development": {
+  "development":{
     "username": "postgres",
     "password": "3",
     "database": "project-zero",

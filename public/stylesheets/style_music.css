@@ -38,21 +38,25 @@ a {
   color: #2d5986;
   margin: auto;
   text-align: center;
+  padding-left: auto;
 }
 
 img {
   width: 200px;
   height: 200px;
-  margin:auto;
-  padding-top:15px;
+  margin: auto;
+  padding-top: 15px;
   padding-bottom: 15px;
-
 
 }
 
+.input-group{
+  text-align: center;
+}
 
 p{
   color: #800080;
   font-size: 40px;
-
 }
+
+

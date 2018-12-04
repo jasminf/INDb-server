@@ -3,6 +3,8 @@ var router = express.Router();
 var axios = require('axios');
 const DeezerApi = require('../../lib/deezer-api.js');
 // const ArtistReport = require('../../lib/artist-report');
+const ArtistReport = require('../../lib/artist-report');
+const {ArtistReports} = require('../../models/index');
 
 
 router.get('/:artistId/', function (req, res) {
@@ -34,6 +36,25 @@ router.get('/:artistId/', function (req, res) {
                         dataAlb: dataMus,
                         dataAr: dataArtist
                     }));
+
+
+                    const artistReport = new ArtistReport();
+                    artistReport.getStats(artistId)
+                        .then((createdReport) =>{
+                            ArtistReports.create({
+                                id: createdReport.id,
+                                artistId: createdReport.artistId,
+                                totalAvgDuration: createdReport.totalAvgDuration,
+                                totalAvgRank: createdReport.totalAvgDuration
+                            })
+                                .then((createdReport)=> {
+                                    console.log('Created user', {createdReport:createdReport})
+                                })
+                                .catch(console.error);
+                        })
+                        .catch();
+
+
 
                     // res.json({
                     //     dataAlb: dataMus,

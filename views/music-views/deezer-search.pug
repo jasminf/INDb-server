@@ -6,11 +6,12 @@ html
         link(href='/stylesheets/style_music.css' type='text/css' rel='stylesheet')
     body
         h1= title
-        .input-group.mb-2
-            .input-group-prepend
-                button#inputGroup-sizing-default.input-group-text search
-            input.form-control(type='button' aria-label='search' aria-describedby='inputGroup-sizing-default')
-        form(method='POST' action='/search/artists')
-        h3 Your search result:
-        a(href="/search/artists/"+ artist.name)=search
+        .px-5
+            form(method='POST' action='/search/artists')
+                input.form-control(name='search_query' type='text')
+                button.btn.btn-primary(type='submit') search
+                h3 Your search result:
+
+
+
 

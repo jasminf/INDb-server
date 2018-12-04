@@ -12,9 +12,9 @@ html
             h3=artist.id
             img(src=artist.picture_xl)
             br
+            form(method='POST' action='/user/artist/save_favorite')
+                input(type="hidden" id="save" name="artistId" value=artist.id)
+                button.btn.btn-primary(type='submit') save
 
-//            a(href="/userFar/"+ user.id)= add button // add to fav
 
-// .img-thumbnail
 
-//.d-flex-content-stretch.flex-wrap

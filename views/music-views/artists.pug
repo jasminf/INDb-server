@@ -9,8 +9,10 @@ html
         h1= title
         h3 alot fo artists
         each artist in data
-            a(href="/specific/"+artist.id)= artist.name
+            .lll
+                a(href="/specific/"+artist.id)= artist.name
             br
-            img.img-thumbnail(src=artist.picture_xl)
+            .rrr
+                img.img-thumbnail(src=artist.picture_xl)
             br
 
