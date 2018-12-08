@@ -6,9 +6,14 @@ html
         link(href='/stylesheets/style_music.css' type='text/css' rel='stylesheet')
     body
         h1 My favorites:
-         each newArtist in artistFav
-            h3=newArtist.name
-            img.img-thumbnail(src=newArtist.pictureUrl)
-        each neewArtist in createdArtistReports
-            h3=neewArtist.totalAvgDuration
-            h2=neewArtist.totalAvgRank
+         each artist in artists
+            - var artistReport = artist.artistReport;
+            h3=artist.name
+            img.img-thumbnail(src=artist.pictureUrl)
+            form(method='POST' action='/destroy/favorite')
+                input(type="hidden" id="delete" name="artistId" value=artist.deezerArtistId)
+                button.btn.btn-primary(type='submit') Delete from favorite
+
+            //h3=artistReport.totalAvgDuration
+            //h2=artistReport.totalAvgRank
+

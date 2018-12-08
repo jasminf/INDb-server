@@ -8,6 +8,8 @@ var bodyParser = require('body-parser');
 // require('./lib/test-db');
 
 var main = require('./routes/main');
+var signUp = require('./routes/sign-up');
+var userZone = require('./routes/user');
 var userFav = require('./routes/user-favorites');
 var comics = require('./routes/comics');
 
@@ -16,8 +18,10 @@ var artists = require('./routes/music/artists');
 var specific = require('./routes/music/specific-artist');
 var albums = require('./routes/music/album-of-artist');
 var stats = require('./routes/music/artist-stats');
-var artistSearch = require('./routes/music/artist-search');
 var deezerSearch = require('./routes/music/deezer-search');
+var saveFav = require('./routes/music/save-to-fav');
+var destroyFav = require('./routes/music/destroy-from-fav');
+
 
 var app = express();
 
@@ -35,16 +39,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/main', main);
-app.use('/user', userFav);
+app.use('/signup', signUp);
+app.use('/user', userZone);
+app.use('/favorite', userFav); // artist
 app.use('/comics', comics);
 app.use('/artists', artists);
 app.use('/specific', specific);
 app.use('/albums', albums);
 app.use('/genre', genre);
 app.use('/stats', stats);
-app.use('/search', artistSearch);
 app.use('/search', deezerSearch);
-
+app.use('/save', saveFav);
+app.use('/destroy', destroyFav);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

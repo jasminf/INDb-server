@@ -6,7 +6,11 @@ module.exports = (sequelize, DataTypes) => {
     totalAvgDuration: DataTypes.DECIMAL,
     totalAvgRank: DataTypes.DECIMAL,
   }, {
-
+      getterMethods   : {
+          fullName: function()  {
+              return this.totalAvgDuration + ' ' + this.artistId;
+          }
+      },
   });
 
 

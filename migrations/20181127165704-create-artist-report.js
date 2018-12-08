@@ -10,7 +10,9 @@ module.exports = {
       },
       artistId: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        // ignoreDuplicates: false
+
       },
       totalAvgDuration: {
         defaultValue: 0.0,
