@@ -2,10 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', (req, res)=> {
-    const viewData = {
-      title: 'Search Artist'
-    };
-    res.render('music-views/deezer-search', viewData);
+
+    res.render('music-views/deezer-search');
 });
 
 
@@ -17,11 +15,7 @@ router.post('/artists', function (req, res) {
     const artistSearch = new ArtistSearch();
     artistSearch.searchArtist(artistName)
         .then((search) => {
-            const viewData = {
-                title: 'Search Artist',
-                artistSearchResults: search
-            };
-            res.render('music-views/artist-search', viewData);
+            res.render('music-views/artist-search', {search});
         })
         .catch(function (error) {
             console.error("api Error", error);
@@ -32,8 +26,9 @@ router.post('/artists', function (req, res) {
 });
 
 
-
-
-
-
 module.exports = router;
+
+
+
+
+

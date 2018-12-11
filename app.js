@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 // require('./lib/test-db');
 
 var main = require('./routes/main');
-var signUp = require('./routes/sign-up');
+var signup = require('./routes/sign-up');
 var userZone = require('./routes/user');
 var userFav = require('./routes/user-favorites');
 var comics = require('./routes/comics');
@@ -39,9 +39,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/main', main);
-app.use('/signup', signUp);
+app.use('/signup', signup);
 app.use('/user', userZone);
-app.use('/favorite', userFav); // artist
+app.use('/favorites', userFav);
 app.use('/comics', comics);
 app.use('/artists', artists);
 app.use('/specific', specific);

@@ -5,12 +5,27 @@ html
         link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous')
         link(href='/stylesheets/style_music.css' type='text/css' rel='stylesheet')
     body
-        h1= title
+        h1 'Search Artist'
         .px-5
             form(method='POST' action='/search/artists')
                 input.form-control(name='search_query' type='text')
                 button.btn.btn-primary(type='submit') search
                 h3 Your search result:
+
+
+                if search_query
+                    h3 Your search result:
+                        h1= title
+                        each searchResult in search
+                            h3=searchResult.name
+                            h3=searchResult.id
+                            img(src=searchResult.picture_xl)
+                            form(method='POST' action='/save/save_favorite')
+                                input(type="hidden" id="save" name="artistId" value=searchResult.id)
+                                button.btn.btn-primary(type='submit') save
+
+                else
+                    h1='Not fond!'
 
 
 

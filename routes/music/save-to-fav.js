@@ -12,8 +12,10 @@ router.post('/save_favorite', function (req, res) {
     const artistApi = new DeezerApi();
     artistApi.fetchArtistInfo(artistId)
         .then((artistInfo) => {
-            User.findOne({where:{id: 2}})
+            User.findOne({where: {id: 2}})
                 .then((user) => {
+                    // Artist.findOne({where: {deezerArtistId: artistId}})
+                    // ? console.log(`This artist already exist in your favorites list`) : .then(() => {
                     Artist.create({
                         userId: user.id,
                         name: artistInfo.name,

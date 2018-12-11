@@ -5,9 +5,8 @@ html
         link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous')
         link(href='/stylesheets/style_music.css' type='text/css' rel='stylesheet')
     body
-        h3 Your search result:
-        h1= title
-        each searchResult in artistSearchResults
+        h1 Your search result:
+        each searchResult in search
             h3=searchResult.name
             h3=searchResult.id
             img(src=searchResult.picture_xl)
