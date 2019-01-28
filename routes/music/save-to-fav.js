@@ -57,7 +57,7 @@ const createArtistAndReport = (userId, artistInfo)=> {
             return artistStats.getStats(deezerArtistId)
                 .then((stats) => {
                     return ArtistReport.create({
-                        artistId: createdArtist.deezerArtistId,
+                        artistId: createdArtist.id,
                         totalAvgDuration: stats.totalAverageDuration,
                         totalAvgRank: stats.totalAverageRank
                     })

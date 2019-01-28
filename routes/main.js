@@ -12,4 +12,15 @@ router.get('/', function (req, res, next) {
   res.render('maim', viewData);
 });
 
+
+router.get('/artist', function (req, res, next) {
+
+  const artist = {
+    id: 3,
+    name: 'primus',
+  };
+  res.json({artist});
+
+});
+
 module.exports = router;

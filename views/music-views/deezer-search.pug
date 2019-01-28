@@ -11,21 +11,17 @@ html
                 input.form-control(name='search_query' type='text')
                 button.btn.btn-primary(type='submit') search
                 h3 Your search result:
-
-
-                if search_query
-                    h3 Your search result:
-                        h1= title
-                        each searchResult in search
-                            h3=searchResult.name
-                            h3=searchResult.id
-                            img(src=searchResult.picture_xl)
-                            form(method='POST' action='/save/save_favorite')
-                                input(type="hidden" id="save" name="artistId" value=searchResult.id)
-                                button.btn.btn-primary(type='submit') save
-
-                else
-                    h1='Not fond!'
+            //if search_query
+            //    h3 Your search result:
+            //    each searchResult in search
+            //        h3=searchResult.name
+            //        h3=searchResult.id
+            //        img(src=searchResult.picture_xl)
+            //        form(method='POST' action='/save/save_favorite')
+            //            input(type="hidden" id="save" name="artistId" value=searchResult.id)
+            //            button.btn.btn-primary(type='submit') save
+            //else
+            //    h1='Not fond!'
 
 
 

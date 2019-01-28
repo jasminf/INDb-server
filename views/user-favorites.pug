@@ -7,13 +7,17 @@ html
     body
         h1 My favorites:
          each artist in artists
-            - var artistReport = artist.artistReport;
+
             h3=artist.name
             img.img-thumbnail(src=artist.pictureUrl)
             form(method='POST' action='/destroy/favorite')
                 input(type="hidden" id="delete" name="artistId" value=artist.deezerArtistId)
                 button.btn.btn-primary(type='submit') Delete from favorite
 
-            //h3=artistReport.totalAvgDuration
-            //h2=artistReport.totalAvgRank
+            - var artistReport = artist.artistReport;
+            if artistReport
+                h3 totalAvgDuration: #{artistReport.totalAvgDuration}
+                h3 totalAvgRank: #{artistReport.totalAvgRank}
+            else
+                h3 No Report
 

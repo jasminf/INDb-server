@@ -12,6 +12,7 @@ var signup = require('./routes/sign-up');
 var userZone = require('./routes/user');
 var userFav = require('./routes/user-favorites');
 var comics = require('./routes/comics');
+var marvel = require('./routes/marvel-search');
 
 var genre = require('./routes/music/music-genre');
 var artists = require('./routes/music/artists');
@@ -37,7 +38,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+app.use('/marvel', marvel);
 app.use('/main', main);
 app.use('/signup', signup);
 app.use('/user', userZone);
@@ -70,7 +71,7 @@ app.use(function(err, req, res, next) {
   res.render('error', {error: err});
 });
 
-const port = 3000;
+const port = 3001;
 app.listen(port, ()=> {
   console.log(`App server started on port ${port}`);
 });
