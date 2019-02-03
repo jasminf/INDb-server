@@ -8,10 +8,9 @@ router.get('/view_all', function (req, res) {
     const viewData = {
         title: 'Marvel Comics!!!!',
         comicsList: comicsListArr,
-
     };
-    res.render('comicss/view_all', viewData);
-  
+    // res.render('comicss/view_all', viewData);
+    res.json({comicsList});
 });
 
 

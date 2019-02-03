@@ -12,8 +12,8 @@ router.get('/', function (req, res) {
               title: 'Music genre',
               data: genreDta
           };
-          // res.json(genreDta);
-          res.render('music-views/music-genre', viewData);
+          res.json(genreDta);
+          // res.render('music-views/music-genre', viewData);
       })
       .catch(function (error) {
           console.error("api Error", error);

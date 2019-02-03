@@ -1,27 +1,29 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Artists', {
+    return queryInterface.createTable('Lists', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userId: {
-        allowNull: false,
-        type: Sequelize.INTEGER
-      },
       name: {
         allowNull: false,
         type: Sequelize.STRING
       },
-      deezerArtistId: {
+      userId: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
+      type: {
         allowNull: false,
         type: Sequelize.STRING
       },
-      pictureUrl: {
-        type: Sequelize.STRING
+      isDefault: {
+        allowNull: false,
+        defaultValue: false,
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
@@ -34,6 +36,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Artists');
+    return queryInterface.dropTable('Lists');
   }
 };

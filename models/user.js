@@ -1,15 +1,13 @@
 
-
 module.exports = (sequelize, DataTypes) => {
 
   const User = sequelize.define('User', {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     email: DataTypes.STRING,
-    password: DataTypes.STRING,
   }, {
     getterMethods   : {
-      fullAsosiation: function()  {
+      fullName: function()  {
         return this.firstName + ' ' + this.lastName;
       }
     },
@@ -17,7 +15,10 @@ module.exports = (sequelize, DataTypes) => {
 
 
   User.associate = function(models) {
-    // associations can be defined here
+    const { User, List } = models;
+
+    User.hasMany(List, {as: 'lists', foreignKey: 'userId'});
+    List.belongsTo(User, {as: 'user', foreignKey: 'userId'});
   };
 
   return User;

@@ -13,6 +13,7 @@ var userZone = require('./routes/user');
 var userFav = require('./routes/user-favorites');
 var comics = require('./routes/comics');
 var marvel = require('./routes/marvel-search');
+var goodreads = require('./routes/goodreads-search');
 
 var genre = require('./routes/music/music-genre');
 var artists = require('./routes/music/artists');
@@ -38,6 +39,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+app.use('/',  require('./routes/test-route'));
+
+
+app.use('/books', goodreads);
 app.use('/marvel', marvel);
 app.use('/main', main);
 app.use('/signup', signup);

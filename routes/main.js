@@ -9,7 +9,8 @@ router.get('/', function (req, res, next) {
         linkTwo: ' Music list',
         // linkThree: 'list of albums of specific artist'
       };
-  res.render('maim', viewData);
+  // res.render('maim', viewData);
+  res.json({viewData});
 });
 
 

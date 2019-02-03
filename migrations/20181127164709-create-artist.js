@@ -1,28 +1,23 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('ArtistReports', {
+    return queryInterface.createTable('Artists', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      artistId: {
+      name: {
         allowNull: false,
-        type: Sequelize.INTEGER,
-        // ignoreDuplicates: false
-
+        type: Sequelize.STRING
       },
-      totalAvgDuration: {
-        defaultValue: 0.0,
-        allowNull: false,
-        type: Sequelize.DECIMAL
+      deezerArtistId: {
+        allowNull: true,
+        type: Sequelize.STRING
       },
-      totalAvgRank: {
-        defaultValue: 0.0,
-        allowNull: false,
-        type: Sequelize.DECIMAL
+      pictureUrl: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -35,6 +30,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('ArtistReports');
+    return queryInterface.dropTable('Artists');
   }
 };
