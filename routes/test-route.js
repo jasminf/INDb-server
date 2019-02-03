@@ -33,17 +33,6 @@ router.get('/test_read', function (req, res, next) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 router.get('/test_write', function (req, res, next) {
 
   Artist.findOne({where: {deezerArtistId: '4056'}}).then((artist) => {

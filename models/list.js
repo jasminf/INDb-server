@@ -4,6 +4,11 @@ const Type = {
   Album: 'album',
 };
 
+const DefaultListTitle = {
+  [Type.Artist]: 'My favorite artists',
+  [Type.Album]: 'My favorite albums',
+};
+
 module.exports = (sequelize, DataTypes) => {
 
   const List = sequelize.define('List', {
@@ -21,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   List.Type = Type;
+  List.DefaultListTitle = DefaultListTitle;
 
   return List;
 };

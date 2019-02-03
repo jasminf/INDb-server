@@ -13,7 +13,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       deezerArtistId: {
-        allowNull: true,
+        allowNull: false,
         type: Sequelize.STRING
       },
       pictureUrl: {

@@ -7,24 +7,6 @@ var bodyParser = require('body-parser');
 
 // require('./lib/test-db');
 
-var main = require('./routes/main');
-var signup = require('./routes/sign-up');
-var userZone = require('./routes/user');
-var userFav = require('./routes/user-favorites');
-var comics = require('./routes/comics');
-var marvel = require('./routes/marvel-search');
-var goodreads = require('./routes/goodreads-search');
-
-var genre = require('./routes/music/music-genre');
-var artists = require('./routes/music/artists');
-var specific = require('./routes/music/specific-artist');
-var albums = require('./routes/music/album-of-artist');
-var stats = require('./routes/music/artist-stats');
-var deezerSearch = require('./routes/music/deezer-search');
-var saveFav = require('./routes/music/save-to-fav');
-var destroyFav = require('./routes/music/destroy-from-fav');
-
-
 var app = express();
 
 // view engine setup
@@ -39,25 +21,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-app.use('/',  require('./routes/test-route'));
-
-
-app.use('/books', goodreads);
-app.use('/marvel', marvel);
-app.use('/main', main);
-app.use('/signup', signup);
-app.use('/user', userZone);
-app.use('/favorites', userFav);
-app.use('/comics', comics);
-app.use('/artists', artists);
-app.use('/specific', specific);
-app.use('/albums', albums);
-app.use('/genre', genre);
-app.use('/stats', stats);
-app.use('/search', deezerSearch);
-app.use('/save', saveFav);
-app.use('/destroy', destroyFav);
+// setup routes
+app.use('/search/music', require('./routes/music-search-route'));
+app.use('/search/marvel', require('./routes/marvel-search-route'));
+app.use('/favorites', require('./routes/favorites-route'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
