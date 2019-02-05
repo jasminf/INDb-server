@@ -1,6 +1,6 @@
 const { List, Favorite, Artist } = require('../models');
 
-const DeezerApi = require('../lib/deezer-api');
+const DeezerApi = require('../lib/api/deezer-api');
 
 class FavoritesService {
 

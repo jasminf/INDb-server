@@ -21,10 +21,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // setup routes
+app.use('/search/book', require('./routes/goodreads-search-route'));
 app.use('/search/music', require('./routes/music-search-route'));
 app.use('/search/marvel', require('./routes/marvel-search-route'));
 app.use('/favorites', require('./routes/favorites-route'));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
