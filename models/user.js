@@ -4,6 +4,7 @@ module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
+    password: DataTypes.STRING,
     email: DataTypes.STRING,
   }, {
     getterMethods   : {
@@ -13,6 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
+  User.prototype.validPassword = (password)=> {
+    return true; // TODO
+  };
 
   User.associate = function(models) {
     const { User, List } = models;

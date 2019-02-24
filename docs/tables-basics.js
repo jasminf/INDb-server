@@ -1,4 +1,4 @@
-
+/*
 
 TABLE Users {
 
@@ -39,5 +39,5 @@ TABLE Favorites {
 
 
 
-
+*/
 
