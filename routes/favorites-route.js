@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const requireUser = require('./require-user');
 const FavoritesService = require('../services/favorites-service');
 
-router.post('/save/artist', requireUser, (req, res, next)=> {
-  const { deezerArtistId } = req.body;
+router.post('/save/artist', (req, res, next)=> {
+  const { deezerArtistId:deezerArtistIdRaw } = req.body;
   const { user } = req;
 
-  if (!deezerArtistId) {
+  if (!deezerArtistIdRaw) {
     res.status(500).json({error: 'Param deezerArtistId is required!'})
   }
+  const deezerArtistId = deezerArtistIdRaw.toString();
 
   const favoriteService = new FavoritesService();
   favoriteService.saveArtist(user.id, deezerArtistId)
@@ -18,7 +18,6 @@ router.post('/save/artist', requireUser, (req, res, next)=> {
     })
     .catch(next);
 });
-
 
 module.exports = router;
 

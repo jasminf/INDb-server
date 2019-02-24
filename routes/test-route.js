@@ -22,12 +22,8 @@ router.get('/test_read', function (req, res, next) {
           firstName: user.firstName,
         }
       };
-
       return res.json(result);
-
-
     }).catch(next)
-
 
 });
 
@@ -35,7 +31,7 @@ router.get('/test_read', function (req, res, next) {
 
 router.get('/test_write', function (req, res, next) {
 
-  Artist.findOne({where: {deezerArtistId: '4056'}}).then((artist) => {
+  Artist.findOne({where: {deezerArtistId: '2814'}}).then((artist) => {
 
     User.findOne({}).then((user) => {
 
@@ -54,7 +50,6 @@ router.get('/test_write', function (req, res, next) {
 
           return res.json({createdList, createdFavorite, artist});
         }).catch(next);
-
 
       }).catch(next)
 
