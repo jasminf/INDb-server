@@ -35,3 +35,38 @@ Returns:
     ]
 }
 ```
+
+
+
+##### View Artist
+`GET` `/artist/:artistId`
+```json
+{}
+```
+Returns:
+```json
+{
+    "artist": {
+        "id": 3,            // ID from the DB
+        "artist_name": "Primus",
+        "deezer_artist_id": '123123123"
+    }
+}
+```
+
+
+##### View Album
+`GET` `/album/:albumId`
+```json
+{}
+```
+Returns:
+```json
+{
+    "album": {
+        "id": 3,            // ID from the DB
+        "album_name": "Primus",
+        "deezer_album_id": '123123123"
+    }
+}
+```

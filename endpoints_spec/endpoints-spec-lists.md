@@ -146,3 +146,59 @@ Returns:
 ```
 
 
+
+##### View All My Lists
+`GET` `/lists`
+```json
+{}
+```
+Returns:
+```json
+{
+    "lists": [
+        {
+            "id": 3,
+            "name": "Top 10 Rock artists"
+        },
+        {...}
+    ]
+}
+```
+
+
+##### View All My Lists By Type
+`GET` `/lists/:listType`
+```json
+{}
+```
+Returns:
+```json
+{
+    "lists": [
+        {
+            "id": 3,
+            "name": "Top 10 Rock artists"
+        },
+        {...}
+    ]
+}
+```
+
+
+##### View All User's Lists
+`GET` `user/:userId/lists`
+```json
+{}
+```
+Returns:
+```json
+{
+    "lists": [
+        {
+            "id": 3,
+            "name": "Top 10 Rock artists"
+        },
+        {...}
+    ]
+}
+```
