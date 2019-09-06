@@ -6,8 +6,34 @@
 `POST` `/lists/create`
 ```json
 {
-    "list_name": "Top 10 Rock artists"
+    "list_name": "Top 10 Rock artists",
+    "type": ListType.MusicArtist
 }
+```
+```
+ListType(Enum):
+    MusicArtist
+    MusicAlbum
+    Comics
+    BookAuthor
+    Book
+```
+
+Returns:
+```json
+{
+    "list": {
+        "id": 3,
+        "name": "Top 10 Rock artists"
+    }
+}
+```
+
+
+##### View List
+`GET` `/lists/:listId`
+```json
+{}
 ```
 Returns:
 ```json
@@ -19,21 +45,52 @@ Returns:
 }
 ```
 
-##### Add Item to List
-`POST` `/lists/:listId/add_item`
+##### Add Music Artist to List
+Adds an Artist by it's `deezer_artist_id`.
+If it's not saved in the DB - fetch the data from Deezer and save the new Artist.
+It returns the Artist from the DB.
+`PUT` `/lists/:listId/add_music_artist`
 ```json
 {
-    "data": {...} // ***
+    "artist": {
+        "deezer_artist_id": '123123123"      // Primus artist ID
+    }
 }
 ```
 Returns:
 ```json
 {
-    "ok": true
+    "artist": {
+        "id": 3,            // ID from the DB
+        "artist_name": "Primus",
+        "deezer_artist_id": '123123123"
+    }
 }
 ```
-##### Add items to list in bulk
-`POST` `/lists/:listId/add_items_bulk`
+
+##### Add Music Album to List
+Adds an Album by it's `deezer_album_id`.
+If it's not saved in the DB - fetch the data from Deezer and save the new Album.
+It returns the Album from the DB.
+`PUT` `/lists/:listId/add_music_album`
+```json
+{
+    "album": {
+        "deezer_album_id": '657567567567"
+    }
+}
+```
+Returns:
+```json
+{
+    "album": {
+        "album_name": "bla bla",
+        "deezer_album_id": '657567567567",
+    }
+}
+```
+##### (**FOR LATER**) Add items to list in bulk
+`PUT` `/lists/:listId/add_items_bulk`
 ```json
 {
     "data": [{...}] // ***
@@ -46,10 +103,12 @@ Returns:
 }
 ```
 ##### Remove item from list
-`DELETE` `/lists/:listId/remove_item/:itemId`
+Removes the Artist/Album from the List.
+It **doesn't** delete the Artist/Album itself.
+`PUT` `/lists/:listId/remove_item/:artistId||:albumId`
 ```json
 {
-    "item_id": 123
+    "artist_id||album_id": 123
 }
 ```
 Returns:
