@@ -39,7 +39,7 @@ Returns:
 
 
 ##### View Artist
-`GET` `/artist/:artistId`
+`GET` `music/artist/:artistId`
 ```json
 {}
 ```
@@ -56,7 +56,7 @@ Returns:
 
 
 ##### View Album
-`GET` `/album/:albumId`
+`GET` `music/album/:albumId`
 ```json
 {}
 ```

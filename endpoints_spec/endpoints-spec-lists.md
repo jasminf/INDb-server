@@ -40,7 +40,15 @@ Returns:
 {
     "list": {
         "id": 3,
-        "name": "Top 10 Rock artists"
+        "name": "Top 10 Rock artists",
+        "artists": [
+            {
+                "id": 3,            // ID from the DB
+                "artist_name": "Primus",
+                "deezer_artist_id": '123123123"
+            },
+            {...}
+        ]
     }
 }
 ```
